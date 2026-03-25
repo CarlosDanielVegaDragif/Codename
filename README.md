@@ -1,73 +1,136 @@
-# React + TypeScript + Vite
+Codenames Online (React + TypeScript)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple online multiplayer clone of Codenames, built with React, TypeScript, and Vite.
+Designed as a portfolio project to demonstrate real-time communication, client-server architecture, and game state management.
+🎮 Game Overview
 
-Currently, two official plugins are available:
+This is a browser-based implementation of the classic Codenames party game:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+    Two teams compete against each other
 
-## React Compiler
+    Each team has:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+        🧠 Spymaster — gives one-word clues
 
-## Expanding the ESLint configuration
+        🎯 Guesser — selects cards based on the clue
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+    The objective is to uncover all cards belonging to your team before the opponent does
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+🧩 Rules Summary
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+    The Spymaster provides a single-word clue
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+    The Guesser selects a card on the board
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+    Cards can be:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+        🔵 Blue team
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+        🔴 Red team
+
+        ⚪ Neutral
+
+        💀 Assassin (instant loss)
+
+    The first team to reveal all their cards wins
+
+⚙️ Tech Stack
+
+    Frontend
+
+        React
+
+        TypeScript
+
+        Vite
+
+    Backend
+
+        Node.js
+
+        TypeScript
+
+        WebSockets (real-time communication)
+
+🚀 Getting Started
+1. Clone the repository
+
+git clone https://github.com/your-username/your-repo.git
+cd codename
+
+2. Install dependencies
+Client
+
+cd client
+npm install
+
+Server
+
+cd ../server
+npm install
+
+3. Run the project
+Start the server
+
+cd server
+npx tsx src/index.ts
+
+Start the client
+
+cd client
+npm run dev
+
+4. Open in browser
+
+By default, Vite will provide a local URL (e.g. http://localhost:5173).
+🌐 Features
+
+    Real-time multiplayer using WebSockets
+
+    Room creation and joining system
+
+    Role-based gameplay (Spymaster / Guesser)
+
+    Turn-based logic
+
+    Dynamic game board
+
+    Clean and minimal UI
+
+🧠 What This Project Demonstrates
+
+    Full-stack TypeScript architecture
+
+    Real-time state synchronization
+
+    Client-server communication patterns
+
+    Game logic implementation
+
+    React component design and state handling
+
+📌 Notes
+
+    This is a local multiplayer prototype (not deployed)
+
+    Requires manual server startup
+
+    Intended for learning and portfolio purposes
+
+📷 Future Improvements
+
+    Online deployment (e.g. VPS or cloud hosting)
+
+    Player authentication
+
+    Spectator mode
+
+    Chat system
+
+    Better UI/UX polish
+
+    Mobile responsiveness
+
+📄 License
+
+This project is open-source and available under the MIT License.
